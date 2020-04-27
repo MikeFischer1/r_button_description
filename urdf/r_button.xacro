@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<robot name="r_button" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+	<!-- Button Link -->
+
+	<link name="button_link">
+
+	<inertial>
+		<mass value="0.00001" />
+		<origin rpy="0 0 0" xyz="0 0 0" />
+		<inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1" />
+	</inertial>
+
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0" />
+		<geometry>
+			<sphere radius="0.02" />
+		</geometry>
+	</visual>
+
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0" />
+		<geometry>
+			<sphere radius="0.02" />
+		</geometry>
+	</collision>
+
+	</link>
+
+	<!-- Make red and fixed in Gazebo-->
+
+	<gazebo reference="button_link">
+		<material>Gazebo/Red</material>
+	</gazebo>
+
+	<gazebo>
+		<static>true</static>
+	</gazebo>
+
+</robot>
